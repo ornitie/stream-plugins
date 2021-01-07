@@ -1,5 +1,8 @@
 const START_MINUTES = 25;
 const START_SECONDS = 0;
+const BREAK_MINUTES = 5;
+const BREAK_SECONDS = 0;
+
 const timeoutStack = [];
 
 var minutes = 25;
@@ -47,7 +50,7 @@ function start() {
 }
 
 // Stop and restart timer
-function stop() {
+function stop(newMinutes, newSeconds) {
   clearTimeouts();
   let start = document.getElementById("start");
   start.disabled = false;
@@ -55,8 +58,8 @@ function stop() {
   stop.disabled = true;
   let pause = document.getElementById("pause");
   pause.disabled = true;
-  minutes = START_MINUTES;
-  seconds = START_SECONDS;
+  minutes = newMinutes || START_MINUTES;
+  seconds = newSeconds || START_SECONDS;
   let timer = document.getElementById("timer");
   timer.innerText = `${minutes > 9 ? minutes : `0${minutes}`}:${
     seconds > 9 ? seconds : `0${seconds}`
@@ -85,4 +88,14 @@ function alarm() {
 
 function click() {
   start();
+}
+
+//Set to focus time
+function setFocus() {
+  stop(START_MINUTES, START_SECONDS);
+}
+
+//Set to break time
+function setBreak() {
+  stop(BREAK_MINUTES, BREAK_SECONDS);
 }
