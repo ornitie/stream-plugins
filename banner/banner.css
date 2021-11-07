@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  color: white;
+  font-size: 35px;
+  font: arial;
+}
