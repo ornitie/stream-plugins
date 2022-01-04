@@ -1,5 +1,5 @@
-var minutes = 25;
-var seconds = 0;
+const START_MINUTES = 25;
+const START_SECONDS = 0;
 const timeoutStack = [];
 
 function decrement(minutes, seconds) {
@@ -10,6 +10,7 @@ function decrement(minutes, seconds) {
     seconds = 59;
   } else {
     alert("Time's up");
+    alarm();
     return;
   }
   let timer = document.getElementById("timer");
@@ -27,26 +28,34 @@ function clearTimeouts() {
   }
 }
 
+// Start Timer
 function start() {
   let start = document.getElementById("start");
   start.disabled = true;
   let stop = document.getElementById("stop");
   stop.disabled = false;
-  decrement(minutes, seconds);
+  decrement(START_MINUTES, START_SECONDS);
 }
 
+// Stop and restart timer
 function stop() {
   clearTimeouts();
   let start = document.getElementById("start");
   start.disabled = false;
   let stop = document.getElementById("stop");
   stop.disabled = true;
-  minutes = 25;
-  seconds = 0;
+  minutes = START_MINUTES;
+  seconds = START_SECONDS;
   let timer = document.getElementById("timer");
   timer.innerText = `${minutes > 9 ? minutes : "0" + minutes}:${
     seconds > 9 ? seconds : "0" + seconds
   }`;
+}
+
+// Play the .mp3 file of the alarm
+function alarm() {
+  var alarm = new Audio("../resources/SoftAlarm.mp3");
+  alarm.play();
 }
 
 function click() {
