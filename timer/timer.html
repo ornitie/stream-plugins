@@ -9,17 +9,23 @@
   </head>
   <body>
     <div>
-      <h1 class="timer" id="timer">00:00</h1>
-      <button id="start" onclick="start()">
-        <i class="fas fa-play"></i>
-      </button>
-      <button id="stop" onclick="stop()" disabled>
-        <i class="fas fa-stop"></i>
-      </button>
-      <button id="pause" onclick="pause()" disabled>
-        <i class="fas fa-pause"></i>
-      </button>
-      <button id="test" onclick="alarm()">test</button>
+      <div class="container"><h1 class="timer" id="timer">00:00</h1></div>
+      <div class="container">
+        <button id="start" onclick="start()">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="stop" onclick="stop()" disabled>
+          <i class="fas fa-stop"></i>
+        </button>
+        <button id="pause" onclick="pause()" disabled>
+          <i class="fas fa-pause"></i>
+        </button>
+        <button id="test" class="test" onclick="alarm()">test</button>
+      </div>
+      <div class="container">
+        <button id="start" onclick="start()">Focus</button>
+        <button id="start" onclick="start()">Break</button>
+      </div>
     </div>
   </body>
   <script

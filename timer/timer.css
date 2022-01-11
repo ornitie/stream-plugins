@@ -1,3 +1,17 @@
 .timer {
   color: red;
 }
+
+.test {
+  display: none;
+}
+
+.container {
+  display: flex;
+  margin: 5px;
+  justify-content: center;
+  border-color: red;
+}
+button {
+  margin: 7px;
+}
