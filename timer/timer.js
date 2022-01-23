@@ -99,3 +99,10 @@ function setFocus() {
 function setBreak() {
   stop(BREAK_MINUTES, BREAK_SECONDS);
 }
+
+//Make async call via http to comunicate with other elements
+async function httpRequest(url) {
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
+}
